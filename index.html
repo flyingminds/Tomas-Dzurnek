@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tomas Dzurnek — Trusted Handyman & Home Improvement</title>
-<meta name="description" content="Tomas Dzurnek — skilled general handyman. Bathrooms, basements, decks, epoxy and wood flooring, and everything in between. Licensed, insured, reliable. Call 815-600-5079 for a free estimate." />
+<title>Tomas Dzurnak — Trusted Handyman & Home Improvement</title>
+<meta name="description" content="Tomas Dzurnak — skilled general handyman. Bathrooms, basements, decks, epoxy and wood flooring, and everything in between. Licensed, insured, reliable. Call 815-600-5079 for a free estimate." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -275,6 +275,23 @@
     align-items: center; color: var(--rust);
   }
   .service:hover .more { color: var(--amber); }
+  .service-list {
+    list-style: none; margin-top: 22px; padding-top: 20px;
+    border-top: 1px solid var(--line-soft);
+    transition: border-color 0.3s ease;
+  }
+  .service:hover .service-list { border-top-color: rgba(245,241,232,0.2); }
+  .service-list li {
+    font-size: 13px; padding: 5px 0 5px 18px;
+    position: relative; color: inherit; opacity: 0.85;
+    font-weight: 500;
+  }
+  .service-list li::before {
+    content: ""; position: absolute; left: 0; top: 13px;
+    width: 10px; height: 2px; background: var(--amber-deep);
+    transition: background 0.3s ease;
+  }
+  .service:hover .service-list li::before { background: var(--amber); }
 
   /* ===== Why ===== */
   .why { background: var(--ink); color: var(--cream); }
@@ -521,7 +538,7 @@
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
       </span>
       <span class="name-wrap">
-        <span>Tomas Dzurnek</span>
+        <span>Tomas Dzurnak</span>
         <span class="tag">Handyman &amp; Home Craftsman</span>
       </span>
     </a>
@@ -578,7 +595,7 @@
     <div class="reveal">
       <div class="eyebrow">About Tomas</div>
       <h2 class="section-title">One craftsman.<br/>One <em>promise.</em></h2>
-      <p class="section-lede">After fifteen years on jobsites across Chicagoland, Tomas Dzurnek built his handyman business on the simple idea that every homeowner deserves honest work, fair pricing, and a finish you're proud to show off.</p>
+      <p class="section-lede">After fifteen years on jobsites across Chicagoland, Tomas Dzurnak built his handyman business on the simple idea that every homeowner deserves honest work, fair pricing, and a finish you're proud to show off.</p>
     </div>
 
     <div class="about-grid">
@@ -594,7 +611,7 @@
         <p>What my clients tell me they value most isn't just the workmanship. It's that I show up when I said I would, I don't disappear mid‑project, and when I hand over the invoice, there are no surprises on it. If I can't do it well, I'll tell you. If I can, I'll do it right the first time.</p>
         <p>Whether it's a weekend punch list or a full bathroom remodel, you'll get the same careful, dust‑swept, respectful service on every visit.</p>
         <p class="signature">
-          &mdash; Tomas Dzurnek
+          &mdash; Tomas Dzurnak
           <strong>Owner · Handyman · Craftsman</strong>
         </p>
       </div>
@@ -620,8 +637,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 12h18M3 12l2-9h14l2 9M5 12v9h14v-9M9 16h6"/></svg>
         </div>
         <h3>Bathroom Remodels</h3>
-        <p>Full tear‑outs to refresh‑style updates. Tile, vanities, tubs, walk‑in showers, plumbing fixtures, and waterproofing done to code.</p>
-        <span class="more">Learn more →</span>
+        <p>Full tear‑outs to refresh‑style updates — done to code, finished with care.</p>
+        <ul class="service-list">
+          <li>Tile floors, walls &amp; showers</li>
+          <li>Vanities &amp; countertops</li>
+          <li>Tubs &amp; walk‑in showers</li>
+          <li>Faucets &amp; plumbing fixtures</li>
+          <li>Waterproofing &amp; drainage</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -630,8 +653,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg>
         </div>
         <h3>Basement Finishing</h3>
-        <p>Turn that cold slab into a movie room, home gym, or in‑law suite. Framing, insulation, drywall, flooring, lighting — the whole build.</p>
-        <span class="more">Learn more →</span>
+        <p>Turn that cold slab into a movie room, home gym, or in‑law suite.</p>
+        <ul class="service-list">
+          <li>Framing &amp; insulation</li>
+          <li>Drywall &amp; finishing</li>
+          <li>Flooring install</li>
+          <li>Recessed lighting &amp; outlets</li>
+          <li>Trim, doors &amp; closets</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -640,8 +669,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M5 6h14v14H5zM9 6v14M15 6v14"/></svg>
         </div>
         <h3>Decks &amp; Patios</h3>
-        <p>New builds, resurfacing, railing swaps, and repairs. Composite, cedar, or pressure‑treated — built flat, square, and safe.</p>
-        <span class="more">Learn more →</span>
+        <p>New builds and repairs — built flat, square, and safe.</p>
+        <ul class="service-list">
+          <li>New deck construction</li>
+          <li>Board &amp; railing replacement</li>
+          <li>Composite, cedar or pressure‑treated</li>
+          <li>Stair repair &amp; rebuild</li>
+          <li>Staining &amp; sealing</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -650,8 +685,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
         </div>
         <h3>Epoxy Flooring</h3>
-        <p>Garage floors, basements, workshops. Metallic, flake, or solid finishes — grind, prime, coat, and cure. Glass‑smooth and tough.</p>
-        <span class="more">Learn more →</span>
+        <p>Glass‑smooth, tough, and easy to clean — for garages, basements, and workshops.</p>
+        <ul class="service-list">
+          <li>Concrete grinding &amp; prep</li>
+          <li>Metallic finishes</li>
+          <li>Flake &amp; chip systems</li>
+          <li>Solid color coats</li>
+          <li>Clear topcoat sealers</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -660,8 +701,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M2 6h20v12H2zM6 6v12M10 6v12M14 6v12M18 6v12"/></svg>
         </div>
         <h3>Wood &amp; Hard Flooring</h3>
-        <p>Hardwood install, refinishing, LVP, and tile. Tight seams, level subfloors, and a finish that stands up to real life.</p>
-        <span class="more">Learn more →</span>
+        <p>Tight seams, level subfloors, and a finish that stands up to real life.</p>
+        <ul class="service-list">
+          <li>Hardwood install</li>
+          <li>Sanding &amp; refinishing</li>
+          <li>Luxury vinyl plank (LVP)</li>
+          <li>Tile &amp; stone flooring</li>
+          <li>Subfloor repair &amp; leveling</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -670,8 +717,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v5M4 14h6M14 14h6M14 14v6"/></svg>
         </div>
         <h3>Drywall &amp; Paint</h3>
-        <p>Patch jobs, full room hangs, smooth finishes, and clean paint lines. Quiet tools, dust control, and tidy clean‑up every day.</p>
-        <span class="more">Learn more →</span>
+        <p>Smooth finishes, clean lines, and tidy clean‑up every day.</p>
+        <ul class="service-list">
+          <li>Hole &amp; crack patching</li>
+          <li>Full room drywall hangs</li>
+          <li>Smooth &amp; textured finishes</li>
+          <li>Interior painting</li>
+          <li>Trim &amp; door painting</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -680,8 +733,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
         <h3>Carpentry &amp; Trim</h3>
-        <p>Crown, base, chair rail, casing, wainscoting, and built‑ins. Mitered corners that actually meet. Doors that close quietly.</p>
-        <span class="more">Learn more →</span>
+        <p>Mitered corners that actually meet. Doors that close quietly.</p>
+        <ul class="service-list">
+          <li>Crown, base &amp; chair rail</li>
+          <li>Door &amp; window casing</li>
+          <li>Wainscoting &amp; panel walls</li>
+          <li>Built‑ins &amp; shelving</li>
+          <li>Door hanging &amp; repair</li>
+        </ul>
       </div>
 
       <div class="service reveal">
@@ -690,8 +749,14 @@
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
         </div>
         <h3>Honey‑Do Punch Lists</h3>
-        <p>Leaky faucets, squeaky doors, mounted TVs, ceiling fans, pet doors, hung shelves, patched holes — the whole list, one visit.</p>
-        <span class="more">Learn more →</span>
+        <p>The whole list knocked out in one visit — big or small.</p>
+        <ul class="service-list">
+          <li>TV &amp; shelf mounting</li>
+          <li>Ceiling fans &amp; light fixtures</li>
+          <li>Faucet &amp; fixture repair</li>
+          <li>Squeaky doors &amp; locks</li>
+          <li>Pet doors &amp; small installs</li>
+        </ul>
       </div>
 
       <div class="service reveal" style="background: var(--ink); color: var(--cream);">
@@ -911,7 +976,7 @@
           </div>
           <div>
             <div class="label">Email</div>
-            <div class="value"><a href="mailto:tomas@dzurnekhandyman.com">tomas@dzurnekhandyman.com</a></div>
+            <div class="value"><a href="mailto:tomas@dzurnakhandyman.com">tomas@dzurnakhandyman.com</a></div>
           </div>
         </div>
         <div class="info-block">
@@ -991,7 +1056,7 @@
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </span>
         <span class="name-wrap">
-          <span>Tomas Dzurnek</span>
+          <span>Tomas Dzurnak</span>
           <span class="tag" style="color: rgba(245,241,232,0.5);">Handyman &amp; Home Craftsman</span>
         </span>
       </div>
@@ -1020,14 +1085,14 @@
       <h5>Contact</h5>
       <ul>
         <li><a href="tel:8156005079">815-600-5079</a></li>
-        <li><a href="mailto:tomas@dzurnekhandyman.com">Email Tomas</a></li>
+        <li><a href="mailto:tomas@dzurnakhandyman.com">Email Tomas</a></li>
         <li>Naperville, IL</li>
         <li>Mon – Sat · 7am – 7pm</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Tomas Dzurnek · Handyman &amp; Home Craftsman. All rights reserved.</span>
+    <span>© 2026 Tomas Dzurnak · Handyman &amp; Home Craftsman. All rights reserved.</span>
     <span>Licensed &amp; Insured · Naperville, IL</span>
   </div>
 </footer>
