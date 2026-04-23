@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tomas Dzurnek — Trusted Handyman & Home Improvement</title>
+<meta name="description" content="Tomas Dzurnek — skilled general handyman. Bathrooms, basements, decks, epoxy and wood flooring, and everything in between. Licensed, insured, reliable. Call 815-600-5079 for a free estimate." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #141414;
+    --ink-soft: #242424;
+    --cream: #f5f1e8;
+    --paper: #ece6d7;
+    --amber: #e8a21a;
+    --amber-deep: #c2841a;
+    --rust: #b54a18;
+    --muted: #6e665a;
+    --line: #2a2a2a;
+    --line-soft: #d9d2c1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.01em; line-height: 1.1; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== Top ticker ===== */
+  .topbar {
+    background: var(--ink); color: var(--cream);
+    font-size: 13px; padding: 10px 0; border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 28px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .topbar span { display: inline-flex; align-items: center; gap: 8px; }
+  .topbar svg { width: 14px; height: 14px; stroke: var(--amber); }
+  .topbar-right { display: flex; gap: 22px; }
+  @media (max-width: 720px) { .topbar-right span:nth-child(1) { display: none; } }
+
+  /* ===== Nav ===== */
+  nav.main {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line-soft);
+    transition: box-shadow 0.25s ease;
+  }
+  nav.main.scrolled { box-shadow: 0 6px 30px rgba(0,0,0,0.08); }
+  .nav-inner {
+    max-width: 1240px; margin: 0 auto; padding: 18px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .logo {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 22px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .logo .mark {
+    width: 42px; height: 42px;
+    background: var(--ink); color: var(--amber);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 700; letter-spacing: 0;
+  }
+  .logo .mark svg { width: 22px; height: 22px; }
+  .logo .name-wrap { display: flex; flex-direction: column; line-height: 1; gap: 4px; }
+  .logo .tag {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+    text-transform: none;
+  }
+  .nav-links { display: flex; gap: 32px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-links a { position: relative; padding: 6px 0; }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
+    background: var(--amber); transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--ink); color: var(--cream);
+    padding: 13px 22px; font-weight: 700; font-size: 12px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 2px solid var(--ink); transition: all 0.25s ease;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .nav-cta svg { width: 14px; height: 14px; }
+  .nav-cta:hover { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .hamburger div { width: 26px; height: 2px; background: var(--ink); margin: 5px 0; transition: 0.3s; }
+  @media (max-width: 960px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: block; }
+    .nav-links.open {
+      display: flex; flex-direction: column; position: absolute;
+      top: 100%; left: 0; right: 0; background: var(--cream);
+      padding: 24px 28px; gap: 18px; border-bottom: 1px solid var(--line-soft);
+    }
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    position: relative; min-height: 88vh;
+    display: flex; align-items: center;
+    background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.82)),
+                url('https://images.unsplash.com/photo-1581141849291-1125c7b692b5?auto=format&fit=crop&w=1920&q=80') center/cover;
+    color: var(--cream);
+    overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(45deg, rgba(232,162,26,0) 0 20px, rgba(232,162,26,0.05) 20px 21px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1240px; margin: 0 auto; padding: 110px 28px 140px; position: relative; z-index: 2;
+    width: 100%;
+  }
+  .hero-kicker {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--amber); font-weight: 700; margin-bottom: 28px;
+  }
+  .hero-kicker::before { content: ""; width: 48px; height: 2px; background: var(--amber); }
+  .hero h1 {
+    font-size: clamp(44px, 7vw, 92px);
+    text-transform: uppercase; font-weight: 700;
+    max-width: 16ch; margin-bottom: 28px;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber); font-family: 'Fraunces', serif; font-weight: 400; text-transform: none; }
+  .hero p.lede {
+    max-width: 58ch; font-size: clamp(16px, 1.4vw, 19px); color: rgba(245,241,232,0.88);
+    margin-bottom: 44px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px; font-weight: 700; font-size: 12px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border: 2px solid; cursor: pointer; transition: all 0.25s ease;
+  }
+  .btn-primary { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+  .btn-primary:hover { background: transparent; color: var(--amber); }
+  .btn-ghost { background: transparent; border-color: var(--cream); color: var(--cream); }
+  .btn-ghost:hover { background: var(--cream); color: var(--ink); }
+  .btn svg { width: 14px; height: 14px; }
+
+  .scroll-cue {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    color: var(--cream); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    opacity: 0.7;
+  }
+  .scroll-cue::after {
+    content: ""; width: 1px; height: 40px; background: var(--amber);
+    animation: drop 2s ease-in-out infinite;
+  }
+  @keyframes drop { 0%,100% { transform: scaleY(0.3); transform-origin: top; } 50% { transform: scaleY(1); } }
+
+  /* ===== Trust bar ===== */
+  .trust {
+    background: var(--ink); color: var(--cream);
+    padding: 28px 0; border-top: 3px solid var(--amber);
+  }
+  .trust-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 28px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+  }
+  .trust-item svg { width: 28px; height: 28px; stroke: var(--amber); flex-shrink: 0; }
+  @media (max-width: 760px) { .trust-inner { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
+
+  /* ===== Section base ===== */
+  section { padding: 120px 0; position: relative; }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--rust); font-weight: 700; margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--rust); }
+  h2.section-title {
+    font-size: clamp(36px, 5vw, 60px); text-transform: uppercase;
+    max-width: 18ch; margin-bottom: 24px;
+  }
+  h2.section-title em { font-style: italic; color: var(--amber-deep); font-family: 'Fraunces', serif; font-weight: 400; text-transform: none; }
+  .section-lede { max-width: 62ch; color: var(--muted); font-size: 17px; }
+
+  /* ===== About ===== */
+  .about-grid {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center;
+    margin-top: 60px;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 60px; } }
+  .about-img-wrap { position: relative; }
+  .about-img-wrap img {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+    filter: contrast(1.05) saturate(0.92);
+  }
+  .about-img-wrap::before {
+    content: ""; position: absolute; inset: -16px -16px 16px 16px;
+    border: 2px solid var(--ink); z-index: 0;
+  }
+  .about-img-wrap img { position: relative; z-index: 1; }
+  .about-badge {
+    position: absolute; bottom: -32px; left: -32px; z-index: 2;
+    background: var(--amber); padding: 24px 28px;
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
+  }
+  .about-badge .num { font-size: 48px; font-weight: 700; line-height: 1; }
+  .about-badge .label { font-size: 12px; letter-spacing: 0.14em; margin-top: 6px; }
+  .about-copy p { margin-bottom: 18px; font-size: 17px; color: #3d3831; }
+  .about-copy p.signature {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 22px;
+    color: var(--ink); margin-top: 28px; padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .about-copy p.signature strong {
+    display: block; font-family: 'Oswald', sans-serif; font-style: normal;
+    font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); margin-top: 8px;
+  }
+
+  /* ===== Services ===== */
+  .services { background: var(--paper); }
+  .services-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 40px; flex-wrap: wrap; margin-bottom: 60px;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    background: var(--line-soft);
+    border: 1px solid var(--line-soft);
+  }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+  .service {
+    background: var(--paper); padding: 48px 36px;
+    transition: background 0.3s ease, color 0.3s ease; cursor: default;
+    position: relative;
+  }
+  .service:hover { background: var(--ink); color: var(--cream); }
+  .service:hover .service-icon { background: var(--amber); color: var(--ink); }
+  .service:hover .service-num { color: var(--amber); }
+  .service-num {
+    font-family: 'Oswald', sans-serif; font-size: 13px; color: var(--rust);
+    letter-spacing: 0.1em; margin-bottom: 24px; transition: color 0.3s ease;
+  }
+  .service-icon {
+    width: 64px; height: 64px; background: var(--ink); color: var(--amber);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 28px; transition: all 0.3s ease;
+  }
+  .service-icon svg { width: 32px; height: 32px; }
+  .service h3 {
+    font-size: 24px; text-transform: uppercase; margin-bottom: 14px;
+  }
+  .service p { font-size: 15px; color: inherit; opacity: 0.85; }
+  .service .more {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700; margin-top: 22px; display: inline-flex; gap: 8px;
+    align-items: center; color: var(--rust);
+  }
+  .service:hover .more { color: var(--amber); }
+
+  /* ===== Why ===== */
+  .why { background: var(--ink); color: var(--cream); }
+  .why .eyebrow { color: var(--amber); }
+  .why .eyebrow::before { background: var(--amber); }
+  .why .section-title em { color: var(--amber); }
+  .why .section-lede { color: rgba(245,241,232,0.72); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+    margin-top: 70px;
+  }
+  @media (max-width: 900px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-item { border-top: 3px solid var(--amber); padding-top: 28px; }
+  .why-item .big {
+    font-family: 'Oswald', sans-serif; font-size: 56px; font-weight: 700;
+    line-height: 1; margin-bottom: 18px; color: var(--cream);
+  }
+  .why-item h4 {
+    font-size: 18px; text-transform: uppercase; margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+  .why-item p { font-size: 15px; color: rgba(245,241,232,0.72); }
+
+  /* ===== Gallery ===== */
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 260px; gap: 12px; margin-top: 60px;
+  }
+  @media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; } }
+  .g-item { position: relative; overflow: hidden; cursor: pointer; }
+  .g-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .g-item:hover img { transform: scale(1.08); }
+  .g-item::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,20,20,0.75) 0%, rgba(20,20,20,0) 55%);
+    opacity: 0; transition: opacity 0.3s ease;
+  }
+  .g-item:hover::after { opacity: 1; }
+  .g-item .g-label {
+    position: absolute; bottom: 20px; left: 22px; z-index: 2;
+    color: var(--cream); font-family: 'Oswald', sans-serif;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    transform: translateY(10px); opacity: 0; transition: all 0.3s ease;
+  }
+  .g-item .g-label .sub { font-size: 11px; color: var(--amber); margin-bottom: 4px; }
+  .g-item .g-label .main { font-size: 20px; }
+  .g-item:hover .g-label { transform: translateY(0); opacity: 1; }
+  .g-item.tall { grid-row: span 2; }
+
+  /* ===== Testimonials ===== */
+  .testimonials { background: var(--paper); }
+  .t-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    margin-top: 60px;
+  }
+  @media (max-width: 900px) { .t-grid { grid-template-columns: 1fr; } }
+  .t-card {
+    background: var(--cream); padding: 42px 36px;
+    border-top: 4px solid var(--amber);
+    position: relative;
+  }
+  .t-card .quote {
+    font-family: 'Oswald', sans-serif; font-size: 72px; color: var(--amber);
+    line-height: 0.6; position: absolute; top: 32px; right: 30px; opacity: 0.4;
+  }
+  .t-stars { color: var(--amber); margin-bottom: 20px; font-size: 15px; letter-spacing: 2px; }
+  .t-card blockquote {
+    font-family: 'Fraunces', serif; font-size: 18px; font-style: italic;
+    color: var(--ink-soft); line-height: 1.5; margin-bottom: 28px;
+  }
+  .t-author {
+    display: flex; align-items: center; gap: 14px;
+    padding-top: 20px; border-top: 1px solid var(--line-soft);
+  }
+  .t-author .avatar {
+    width: 48px; height: 48px; background: var(--ink); color: var(--amber);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+  }
+  .t-author .meta .name {
+    font-family: 'Oswald', sans-serif; text-transform: uppercase;
+    letter-spacing: 0.06em; font-size: 15px;
+  }
+  .t-author .meta .loc { font-size: 12px; color: var(--muted); }
+
+  /* ===== CTA banner ===== */
+  .cta-banner {
+    background: var(--amber); color: var(--ink); padding: 80px 0;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(-45deg, rgba(20,20,20,0) 0 20px, rgba(20,20,20,0.06) 20px 21px);
+  }
+  .cta-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    flex-wrap: wrap; position: relative; z-index: 2;
+  }
+  .cta-inner h2 {
+    font-size: clamp(28px, 4vw, 46px); text-transform: uppercase; max-width: 22ch;
+  }
+  .cta-inner h2 em { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; text-transform: none; }
+  .cta-phone {
+    font-family: 'Oswald', sans-serif; font-size: 28px; font-weight: 700;
+    display: flex; align-items: center; gap: 14px; letter-spacing: 0.04em;
+  }
+  .cta-phone svg { width: 32px; height: 32px; }
+
+  /* ===== Contact ===== */
+  .contact { background: var(--cream); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; margin-top: 60px;
+  }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 50px; } }
+  .contact-info { }
+  .info-block {
+    display: flex; gap: 18px; padding: 24px 0;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .info-block:last-child { border-bottom: none; }
+  .info-block .icon {
+    width: 48px; height: 48px; background: var(--ink); color: var(--amber);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .info-block .icon svg { width: 22px; height: 22px; }
+  .info-block .label {
+    font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+  }
+  .info-block .value {
+    font-family: 'Oswald', sans-serif; font-size: 20px; text-transform: uppercase;
+  }
+  .info-block .value a:hover { color: var(--amber-deep); }
+
+  form.quote-form {
+    background: var(--ink); color: var(--cream); padding: 48px 44px;
+    position: relative;
+  }
+  @media (max-width: 500px) { form.quote-form { padding: 36px 28px; } }
+  form h3 {
+    font-size: 28px; text-transform: uppercase; margin-bottom: 8px;
+  }
+  form h3 em { color: var(--amber); font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; text-transform: none; }
+  form .form-sub { color: rgba(245,241,232,0.7); margin-bottom: 32px; font-size: 14px; }
+  form label {
+    display: block; font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--amber); margin-bottom: 8px; font-weight: 600;
+  }
+  form .field { margin-bottom: 22px; }
+  form input, form select, form textarea {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid rgba(245,241,232,0.3);
+    color: var(--cream); font-family: 'Manrope', sans-serif;
+    font-size: 15px; padding: 10px 0 12px; transition: border 0.25s ease;
+  }
+  form input:focus, form select:focus, form textarea:focus {
+    outline: none; border-bottom-color: var(--amber);
+  }
+  form textarea { min-height: 90px; resize: vertical; }
+  form select option { background: var(--ink); color: var(--cream); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+  form button {
+    width: 100%; margin-top: 12px; background: var(--amber);
+    color: var(--ink); border: 2px solid var(--amber);
+    padding: 18px; font-weight: 700; font-size: 13px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.25s ease;
+    font-family: 'Manrope', sans-serif;
+  }
+  form button:hover { background: transparent; color: var(--amber); }
+  .form-success {
+    color: var(--amber); font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.1em; text-transform: uppercase; font-size: 14px;
+    margin-top: 18px; display: none;
+  }
+  .form-success.show { display: block; }
+
+  /* ===== Footer ===== */
+  footer {
+    background: #0e0e0e; color: rgba(245,241,232,0.75);
+    padding: 70px 0 30px; border-top: 4px solid var(--amber);
+  }
+  .footer-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 28px;
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 50px;
+  }
+  @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 500px) { .footer-inner { grid-template-columns: 1fr; } }
+  footer .logo { color: var(--cream); margin-bottom: 20px; }
+  footer p { font-size: 14px; line-height: 1.7; }
+  footer h5 {
+    font-family: 'Oswald', sans-serif; font-size: 14px; color: var(--cream);
+    text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 22px;
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 10px; font-size: 14px; }
+  footer ul li a:hover { color: var(--amber); }
+  .footer-bottom {
+    max-width: 1240px; margin: 50px auto 0; padding: 24px 28px 0;
+    border-top: 1px solid rgba(245,241,232,0.1);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-size: 12px; letter-spacing: 0.06em;
+  }
+
+  /* Reveal animation */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 2M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+      Mon – Sat · 7am – 7pm
+    </span>
+    <div class="topbar-right">
+      <span>
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Serving Naperville &amp; the Chicagoland Area
+      </span>
+      <span>
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:8156005079">815-600-5079</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="main" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="mark">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </span>
+      <span class="name-wrap">
+        <span>Tomas Dzurnek</span>
+        <span class="tag">Handyman &amp; Home Craftsman</span>
+      </span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">
+      Get a Free Quote
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><div></div><div></div><div></div></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-kicker">Naperville's Trusted Handyman · Since 2008</div>
+    <h1>Built Right. <br/><em>Done on time.</em></h1>
+    <p class="lede">
+      From finished basements and bathroom remodels to decks, epoxy garage floors, and the little repairs on your list — Tomas brings old‑world craftsmanship and straight‑talk pricing to every job.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">
+        Request a Free Estimate
+        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:8156005079" class="btn btn-ghost">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        Call 815-600-5079
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured</div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.11"/></svg>15+ Years Experience</div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Free Estimates</div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>Locally Owned</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">About Tomas</div>
+      <h2 class="section-title">One craftsman.<br/>One <em>promise.</em></h2>
+      <p class="section-lede">After fifteen years on jobsites across Chicagoland, Tomas Dzurnek built his handyman business on the simple idea that every homeowner deserves honest work, fair pricing, and a finish you're proud to show off.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1574359411659-15573a27bd78?auto=format&fit=crop&w=900&q=80" alt="Tomas on the job" />
+        <div class="about-badge">
+          <div class="num">15+</div>
+          <div class="label">Years on the Tools</div>
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <p>I'm Tomas — a general handyman who treats your home the way I'd want someone to treat mine. Over the years I've tackled just about everything: framing a basement from bare studs, tiling showers, replacing rotted deck boards, laying wide‑plank hardwood, and pouring mirror‑finish epoxy garage floors.</p>
+        <p>What my clients tell me they value most isn't just the workmanship. It's that I show up when I said I would, I don't disappear mid‑project, and when I hand over the invoice, there are no surprises on it. If I can't do it well, I'll tell you. If I can, I'll do it right the first time.</p>
+        <p>Whether it's a weekend punch list or a full bathroom remodel, you'll get the same careful, dust‑swept, respectful service on every visit.</p>
+        <p class="signature">
+          &mdash; Tomas Dzurnek
+          <strong>Owner · Handyman · Craftsman</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head">
+      <div class="reveal">
+        <div class="eyebrow">What I do</div>
+        <h2 class="section-title">Skilled hands for<br/><em>every corner</em> of your home.</h2>
+      </div>
+      <p class="section-lede reveal">If it's around the house, chances are I can fix it, build it, or finish it. Here's a snapshot of the work I do most often.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="service-num">01 / Remodels</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 12h18M3 12l2-9h14l2 9M5 12v9h14v-9M9 16h6"/></svg>
+        </div>
+        <h3>Bathroom Remodels</h3>
+        <p>Full tear‑outs to refresh‑style updates. Tile, vanities, tubs, walk‑in showers, plumbing fixtures, and waterproofing done to code.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">02 / Remodels</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>Basement Finishing</h3>
+        <p>Turn that cold slab into a movie room, home gym, or in‑law suite. Framing, insulation, drywall, flooring, lighting — the whole build.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">03 / Exterior</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 10h18M3 14h18M5 6h14v14H5zM9 6v14M15 6v14"/></svg>
+        </div>
+        <h3>Decks &amp; Patios</h3>
+        <p>New builds, resurfacing, railing swaps, and repairs. Composite, cedar, or pressure‑treated — built flat, square, and safe.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">04 / Flooring</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+        </div>
+        <h3>Epoxy Flooring</h3>
+        <p>Garage floors, basements, workshops. Metallic, flake, or solid finishes — grind, prime, coat, and cure. Glass‑smooth and tough.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">05 / Flooring</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M2 6h20v12H2zM6 6v12M10 6v12M14 6v12M18 6v12"/></svg>
+        </div>
+        <h3>Wood &amp; Hard Flooring</h3>
+        <p>Hardwood install, refinishing, LVP, and tile. Tight seams, level subfloors, and a finish that stands up to real life.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">06 / Interior</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v5M4 14h6M14 14h6M14 14v6"/></svg>
+        </div>
+        <h3>Drywall &amp; Paint</h3>
+        <p>Patch jobs, full room hangs, smooth finishes, and clean paint lines. Quiet tools, dust control, and tidy clean‑up every day.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">07 / Repairs</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Carpentry &amp; Trim</h3>
+        <p>Crown, base, chair rail, casing, wainscoting, and built‑ins. Mitered corners that actually meet. Doors that close quietly.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-num">08 / Repairs</div>
+        <div class="service-icon">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
+        </div>
+        <h3>Honey‑Do Punch Lists</h3>
+        <p>Leaky faucets, squeaky doors, mounted TVs, ceiling fans, pet doors, hung shelves, patched holes — the whole list, one visit.</p>
+        <span class="more">Learn more →</span>
+      </div>
+
+      <div class="service reveal" style="background: var(--ink); color: var(--cream);">
+        <div class="service-num" style="color: var(--amber);">Don't see it?</div>
+        <div class="service-icon" style="background: var(--amber); color: var(--ink);">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Just Ask.</h3>
+        <p>If it's in or around the house, there's a good chance I've done it. Call me and describe the job — I'll give you an honest answer.</p>
+        <a href="tel:8156005079" class="more" style="color: var(--amber);">Call 815-600-5079 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">The Difference</div>
+      <h2 class="section-title">Why homeowners<br/>keep <em>calling back.</em></h2>
+      <p class="section-lede">A handyman is only as good as the last job. Here's what my clients say keeps them picking up the phone.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="big">01</div>
+        <h4>On Time, Every Time</h4>
+        <p>When I say 8 a.m., I mean 8 a.m. Your schedule matters, and so does finishing when I said I would.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="big">02</div>
+        <h4>Clean Workmanship</h4>
+        <p>Straight cuts, tight joints, flat paint, square walls. Finish work I'd be happy to have in my own house.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="big">03</div>
+        <h4>Fair, Up‑Front Pricing</h4>
+        <p>Written estimates before the work starts. No day‑of surprises, no mystery line items on the invoice.</p>
+      </div>
+      <div class="why-item reveal">
+        <div class="big">04</div>
+        <h4>Easy to Work With</h4>
+        <p>Friendly, respectful of your home, and happy to talk through options so you always know what's next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="work">
+  <div class="container">
+    <div class="services-head">
+      <div class="reveal">
+        <div class="eyebrow">Recent Work</div>
+        <h2 class="section-title">A few jobs I'm<br/><em>proud of.</em></h2>
+      </div>
+      <p class="section-lede reveal">A small sampling of recent projects around Naperville and the western suburbs.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="g-item tall reveal">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Bathroom remodel" />
+        <div class="g-label"><div class="sub">Bathroom Remodel</div><div class="main">Master Bath · Naperville</div></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Finished basement" />
+        <div class="g-label"><div class="sub">Finished Basement</div><div class="main">Entertainment Suite</div></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1591017403286-fd8493524e1e?auto=format&fit=crop&w=800&q=80" alt="Deck build" />
+        <div class="g-label"><div class="sub">Deck Build</div><div class="main">Composite Back Deck</div></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Hardwood floor install" />
+        <div class="g-label"><div class="sub">Wood Flooring</div><div class="main">White Oak Install</div></div>
+      </div>
+      <div class="g-item tall reveal">
+        <img src="https://images.unsplash.com/photo-1615529162924-f8605388461d?auto=format&fit=crop&w=800&q=80" alt="Epoxy garage floor" />
+        <div class="g-label"><div class="sub">Epoxy Flooring</div><div class="main">Metallic Garage Finish</div></div>
+      </div>
+      <div class="g-item reveal">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Interior remodel" />
+        <div class="g-label"><div class="sub">Trim &amp; Carpentry</div><div class="main">Crown &amp; Wainscot</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="services-head">
+      <div class="reveal">
+        <div class="eyebrow">Kind Words</div>
+        <h2 class="section-title">What my<br/><em>neighbors say.</em></h2>
+      </div>
+      <p class="section-lede reveal">Most of my work comes from referrals — and that's because homeowners keep saying the same kinds of things.</p>
+    </div>
+
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <div class="quote">&ldquo;</div>
+        <div class="t-stars">★★★★★</div>
+        <blockquote>Tomas showed up exactly when he said he would — every single day. Our basement finish came in on schedule and looked better than we imagined. Rare to find someone this reliable.</blockquote>
+        <div class="t-author">
+          <div class="avatar">JM</div>
+          <div class="meta">
+            <div class="name">Jennifer M.</div>
+            <div class="loc">Naperville, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="quote">&ldquo;</div>
+        <div class="t-stars">★★★★★</div>
+        <blockquote>The workmanship is truly excellent. He redid our master bath — the tile work is beautiful, and every detail was clearly done with care. Pleasant, professional, and a pleasure to have in our home.</blockquote>
+        <div class="t-author">
+          <div class="avatar">DR</div>
+          <div class="meta">
+            <div class="name">David &amp; Rachel S.</div>
+            <div class="loc">Wheaton, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="quote">&ldquo;</div>
+        <div class="t-stars">★★★★★</div>
+        <blockquote>Honest, reasonable pricing and no surprises. The deck was built solid and finished ahead of schedule. I've already booked Tomas for our kitchen floor — that tells you everything.</blockquote>
+        <div class="t-author">
+          <div class="avatar">MK</div>
+          <div class="meta">
+            <div class="name">Michael K.</div>
+            <div class="loc">Aurora, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="quote">&ldquo;</div>
+        <div class="t-stars">★★★★★</div>
+        <blockquote>Our epoxy garage floor looks incredible — easy to clean, and still glossy a year in. Tomas was punctual, professional, and finished exactly on the day he promised. Reasonable charges, too.</blockquote>
+        <div class="t-author">
+          <div class="avatar">PT</div>
+          <div class="meta">
+            <div class="name">Paul T.</div>
+            <div class="loc">Lisle, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="quote">&ldquo;</div>
+        <div class="t-stars">★★★★★</div>
+        <blockquote>We've had Tomas out for three projects now — hardwood install, some carpentry, and a long honey‑do list. Always on time, completes everything on schedule, and just really nice to deal with.</blockquote>
+        <div class="t-author">
+          <div class="avatar">SC</div>
+          <div class="meta">
+            <div class="name">Sarah C.</div>
+            <div class="loc">Plainfield, IL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-card reveal">
+        <div class="quote">&ldquo;</div>
+        <div class="t-stars">★★★★★</div>
+        <blockquote>I've worked with a lot of contractors over the years — Tomas is the one I recommend without hesitation. Excellent craftsmanship, fair prices, and he stands behind the work.</blockquote>
+        <div class="t-author">
+          <div class="avatar">RH</div>
+          <div class="meta">
+            <div class="name">Robert H.</div>
+            <div class="loc">Bolingbrook, IL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <h2>Got a project? <em>Let's talk it through.</em></h2>
+    <a href="tel:8156005079" class="cta-phone">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+      815-600-5079
+    </a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow">Get In Touch</div>
+      <h2 class="section-title">Free estimates.<br/><em>No pressure.</em></h2>
+      <p class="section-lede">Tell me a bit about your project and I'll get back to you — usually the same day. You can also call or text the number below anytime during business hours.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="info-block">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="label">Call or Text</div>
+            <div class="value"><a href="tel:8156005079">815-600-5079</a></div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:tomas@dzurnekhandyman.com">tomas@dzurnekhandyman.com</a></div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="label">Service Area</div>
+            <div class="value">Naperville &amp; Chicagoland</div>
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="icon">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 2M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          </div>
+          <div>
+            <div class="label">Hours</div>
+            <div class="value">Mon – Sat · 7am – 7pm</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="quote-form reveal" id="quoteForm" onsubmit="return submitQuote(event)">
+        <h3>Tell me about <em>your project.</em></h3>
+        <p class="form-sub">I'll respond within a few hours during the workday.</p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="field">
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service…</option>
+            <option>Bathroom Remodel</option>
+            <option>Basement Finishing</option>
+            <option>Deck Build or Repair</option>
+            <option>Epoxy Flooring</option>
+            <option>Wood / Hard Flooring</option>
+            <option>Drywall &amp; Paint</option>
+            <option>Carpentry &amp; Trim</option>
+            <option>General Repairs / Punch List</option>
+            <option>Something Else</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="details">Project Details</label>
+          <textarea id="details" name="details" placeholder="Rough scope, timing, address or zip…"></textarea>
+        </div>
+
+        <button type="submit">Send My Request →</button>
+        <div class="form-success" id="formSuccess">Thanks! I'll be in touch soon.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="logo">
+        <span class="mark">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </span>
+        <span class="name-wrap">
+          <span>Tomas Dzurnek</span>
+          <span class="tag" style="color: rgba(245,241,232,0.5);">Handyman &amp; Home Craftsman</span>
+        </span>
+      </div>
+      <p>Licensed, insured, and locally owned — building and fixing homes across Naperville and Chicagoland with old‑world craftsmanship.</p>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Bathroom Remodels</a></li>
+        <li><a href="#services">Basement Finishing</a></li>
+        <li><a href="#services">Decks &amp; Patios</a></li>
+        <li><a href="#services">Epoxy Flooring</a></li>
+        <li><a href="#services">Wood Flooring</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Tomas</a></li>
+        <li><a href="#work">Recent Work</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Free Estimate</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:8156005079">815-600-5079</a></li>
+        <li><a href="mailto:tomas@dzurnekhandyman.com">Email Tomas</a></li>
+        <li>Naperville, IL</li>
+        <li>Mon – Sat · 7am – 7pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Tomas Dzurnek · Handyman &amp; Home Craftsman. All rights reserved.</span>
+    <span>Licensed &amp; Insured · Naperville, IL</span>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav shadow
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form (demo — replace with real backend / mailto)
+  function submitQuote(e) {
+    e.preventDefault();
+    document.getElementById('formSuccess').classList.add('show');
+    document.getElementById('quoteForm').reset();
+    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 6000);
+    return false;
+  }
+</script>
+
+</body>
+</html>
