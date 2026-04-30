@@ -3,11 +3,60 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tomas Dzurnak — Trusted Handyman & Home Improvement</title>
-<meta name="description" content="Tomas Dzurnak — skilled general handyman. Bathrooms, basements, decks, epoxy and wood flooring, and everything in between. Licensed, insured, reliable. Call 815-600-5079 for a free estimate." />
+<title>Tomas Dzurnak — Trusted Handyman & Home Improvement | Naperville, IL</title>
+<meta name="description" content="Tomas Dzurnak — skilled general handyman serving Naperville and Chicagoland. Bathroom remodels, basement finishing, decks, epoxy and wood flooring. Licensed, insured, reliable. Call 815-600-5079 for a free estimate." />
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tomas Dzurnak — Trusted Handyman in Naperville, IL" />
+<meta property="og:description" content="Bathroom remodels, basement finishing, decks, epoxy floors and more. Old‑world craftsmanship. Free estimates — 815-600-5079." />
+<meta property="og:image" content="images/bath-IMG_5642.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon (inline SVG: amber wrench) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e8a21a' stroke='%23141414' stroke-width='1.5'%3E%3Cpath d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/%3E%3C/svg%3E" />
+
+<!-- Preload hero image so it paints fast -->
+<link rel="preload" as="image" href="images/bath-IMG_5642.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+
+<!-- Local business schema for Google rich results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Tomas Dzurnak Handyman",
+  "image": "images/tomas.jpg",
+  "telephone": "+1-815-600-5079",
+  "email": "tomdz@live.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Naperville",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Naperville, IL",
+    "Wheaton, IL",
+    "Aurora, IL",
+    "Lisle, IL",
+    "Plainfield, IL",
+    "Bolingbrook, IL",
+    "Chicagoland"
+  ],
+  "priceRange": "$$",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "07:00",
+    "closes": "19:00"
+  }
+}
+</script>
+
 <style>
   :root {
     --ink: #141414;
@@ -112,8 +161,8 @@
   .hero {
     position: relative; min-height: 88vh;
     display: flex; align-items: center;
-    background: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.82)),
-                url('https://images.unsplash.com/photo-1581141849291-1125c7b692b5?auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: linear-gradient(rgba(10,10,10,0.45), rgba(10,10,10,0.75)),
+                url('images/bath-IMG_5642.jpg') center/cover;
     color: var(--cream);
     overflow: hidden;
   }
@@ -139,7 +188,7 @@
   }
   .hero h1 em { font-style: italic; color: var(--amber); font-family: 'Fraunces', serif; font-weight: 400; text-transform: none; }
   .hero p.lede {
-    max-width: 58ch; font-size: clamp(16px, 1.4vw, 19px); color: rgba(245,241,232,0.88);
+    max-width: 58ch; font-size: clamp(16px, 1.4vw, 19px); color: rgba(245,241,232,0.92);
     margin-bottom: 44px;
   }
   .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -545,6 +594,76 @@
     font-size: 12px; letter-spacing: 0.06em;
   }
 
+  /* ===== Featured Projects (before / during / after) ===== */
+  .transformation { background: var(--paper); }
+  .transform-head { max-width: 760px; margin-bottom: 70px; }
+  .project { padding: 60px 0; border-top: 2px solid var(--line-soft); }
+  .project:first-of-type { border-top: none; padding-top: 0; }
+  .project-head { margin-bottom: 50px; max-width: 640px; }
+  .project-head .project-label {
+    font-family: 'Oswald', sans-serif; font-size: 12px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rust); font-weight: 700; margin-bottom: 12px;
+  }
+  .project-head h3 {
+    font-size: clamp(28px, 3.5vw, 42px); text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .project-head h3 em {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    color: var(--amber-deep); text-transform: none;
+  }
+  .project-head p { color: var(--muted); font-size: 16px; }
+  .phase {
+    display: grid; grid-template-columns: 240px 1fr; gap: 56px;
+    align-items: start; padding: 36px 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .phase:first-of-type { border-top: none; padding-top: 0; }
+  .phase-head { position: sticky; top: 110px; }
+  .phase-tag {
+    display: inline-block; padding: 9px 16px;
+    font-family: 'Oswald', sans-serif; font-size: 12px;
+    letter-spacing: 0.24em; text-transform: uppercase; font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .phase-tag-before { background: var(--muted); color: var(--cream); }
+  .phase-tag-during { background: var(--rust); color: var(--cream); }
+  .phase-tag-after  { background: var(--amber); color: var(--ink); }
+  .phase-head h4 {
+    font-size: 26px; text-transform: uppercase; margin-bottom: 12px;
+    font-family: 'Oswald', sans-serif; font-weight: 600; line-height: 1.1;
+  }
+  .phase-head h4 em {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-weight: 400; color: var(--amber-deep); text-transform: none;
+  }
+  .phase-head p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+  .phase-grid {
+    display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr);
+  }
+  .phase-grid.cols-1 { grid-template-columns: 1fr; }
+  .phase-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .phase-grid figure { position: relative; overflow: hidden; }
+  .phase-grid img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .phase-grid.cols-1 img { aspect-ratio: 16/9; }
+  .phase-grid figure:hover img { transform: scale(1.04); }
+  .phase-grid figcaption {
+    position: absolute; bottom: 12px; left: 14px;
+    color: var(--cream); font-family: 'Oswald', sans-serif;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    background: rgba(20,20,20,0.7); padding: 5px 10px;
+  }
+  @media (max-width: 800px) {
+    .phase { grid-template-columns: 1fr; gap: 24px; padding: 30px 0; }
+    .phase-head { position: static; }
+    .phase-grid, .phase-grid.cols-3 { grid-template-columns: 1fr; gap: 10px; }
+    .phase-grid.cols-1 img { aspect-ratio: 4/3; }
+  }
+
   /* Reveal animation */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
@@ -602,7 +721,7 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="hero-inner">
-    <div class="hero-kicker">Naperville's Trusted Handyman · Since 2008</div>
+    <div class="hero-kicker">Naperville's Trusted Handyman</div>
     <h1>Built Right. <br/><em>Done on time.</em></h1>
     <p class="lede">
       From finished basements and bathroom remodels to decks, epoxy garage floors, and the little repairs on your list — Tomas brings old‑world craftsmanship and straight‑talk pricing to every job.
@@ -642,15 +761,15 @@
 
     <div class="about-grid">
       <div class="about-img-wrap reveal">
-        <img src="images/tomas.jpg" alt="Tomas Dzurnak — handyman and home craftsman" />
+        <img src="images/tomas.jpg" alt="Tomas Dzurnak — handyman and home craftsman in Naperville, IL" />
         <div class="about-badge">
           <div class="num">25+</div>
           <div class="label">Years on the Tools</div>
         </div>
       </div>
       <div class="about-copy reveal">
-        <p>I'm Tomas — a general handyman who treats your home the way I'd want someone to treat mine. Over the years I've tackled just about everything: framing a basement from bare studs, tiling showers, replacing rotted deck boards, laying wide‑plank hardwood, and pouring mirror‑finish epoxy garage floors.</p>
-        <p>What my clients tell me they value most isn't just the workmanship. It's that I show up when I said I would, I don't disappear mid‑project, and when I hand over the invoice, there are no surprises on it. If I can't do it well, I'll tell you. If I can, I'll do it right the first time.</p>
+        <p>I'm Tomas — a general handyman who treats your home the way I'd want someone to treat mine. Over the years I've tackled just about everything: framing basements, tiling showers, building decks, laying wide‑plank hardwood, and pouring mirror‑finish epoxy floors.</p>
+        <p>What my clients tell me they value most: I'll be straight with you. If I can't do a job well, I'll tell you. If I can, I'll do it right the first time.</p>
         <p>Whether it's a weekend punch list or a full bathroom remodel, you'll get the same careful, dust‑swept, respectful service on every visit.</p>
         <p class="signature">
           &mdash; Tomas Dzurnak
@@ -690,7 +809,7 @@
       </div>
 
       <div class="service reveal">
-        <div class="service-num">02 / Remodels</div>
+        <div class="service-num">02 / Basement</div>
         <div class="service-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12M9 21v-6h6v6"/></svg>
         </div>
@@ -754,7 +873,7 @@
       </div>
 
       <div class="service reveal">
-        <div class="service-num">06 / Interior</div>
+        <div class="service-num">06 / Walls</div>
         <div class="service-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 4v5M4 14h6M14 14h6M14 14v6"/></svg>
         </div>
@@ -770,7 +889,7 @@
       </div>
 
       <div class="service reveal">
-        <div class="service-num">07 / Repairs</div>
+        <div class="service-num">07 / Carpentry</div>
         <div class="service-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
         </div>
@@ -786,7 +905,7 @@
       </div>
 
       <div class="service reveal">
-        <div class="service-num">08 / Repairs</div>
+        <div class="service-num">08 / Punch List</div>
         <div class="service-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
         </div>
@@ -808,7 +927,7 @@
         </div>
         <h3>Just Ask.</h3>
         <p>If it's in or around the house, there's a good chance I've done it. Call me and describe the job — I'll give you an honest answer.</p>
-        <a href="tel:8156005079" class="more" style="color: var(--amber);">Call 815-600-5079 →</a>
+        <a href="#contact" class="more" style="color: var(--amber);">Tell me about it →</a>
       </div>
     </div>
   </div>
@@ -848,41 +967,134 @@
   </div>
 </section>
 
-<!-- GALLERY -->
-<section id="work">
+<!-- FEATURED PROJECTS (before / during / after) -->
+<section class="transformation" id="work">
   <div class="container">
-    <div class="services-head">
-      <div class="reveal">
-        <div class="eyebrow">Recent Work</div>
-        <h2 class="section-title">A few jobs I'm<br/><em>proud of.</em></h2>
-      </div>
-      <p class="section-lede reveal">A small sampling of recent projects around Naperville and the western suburbs.</p>
+    <div class="transform-head reveal">
+      <div class="eyebrow">Featured Projects</div>
+      <h2 class="section-title">Before. During.<br/><em>After.</em></h2>
+      <p class="section-lede">Two recent jobs, start to finish.</p>
     </div>
 
-    <div class="gallery-grid">
-      <div class="g-item tall reveal">
-        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Bathroom remodel" />
-        <div class="g-label"><div class="sub">Bathroom Remodel</div><div class="main">Master Bath · Naperville</div></div>
+    <!-- Project 1: Master Bath -->
+    <div class="project">
+      <div class="project-head reveal">
+        <div class="project-label">Project 01 — Bathroom Remodel</div>
+        <h3>A master bath, <em>top to toe.</em></h3>
+        <p>Old tub, dark vanity, and a frosted shower stall stripped out. Marble‑look tile, a freestanding soaker, and a soft‑close gray vanity in their place.</p>
       </div>
-      <div class="g-item reveal">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Finished basement" />
-        <div class="g-label"><div class="sub">Finished Basement</div><div class="main">Entertainment Suite</div></div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-tag phase-tag-before">Before</span>
+          <h4>Where we <em>started.</em></h4>
+          <p>Dated finishes, frosted shower stall, heavy dark vanity that swallowed the light.</p>
+        </div>
+        <div class="phase-grid">
+          <figure>
+            <img src="images/bath-IMG_5634.jpg" loading="lazy" alt="Bathroom before remodel — old frosted shower stall and tub area" />
+            <figcaption>Before · Shower &amp; Tub</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bath-IMG_5635.jpg" loading="lazy" alt="Bathroom before remodel — original dark wood double vanity" />
+            <figcaption>Before · Vanity</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="g-item reveal">
-        <img src="https://images.unsplash.com/photo-1591017403286-fd8493524e1e?auto=format&fit=crop&w=800&q=80" alt="Deck build" />
-        <div class="g-label"><div class="sub">Deck Build</div><div class="main">Composite Back Deck</div></div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-tag phase-tag-during">During</span>
+          <h4>Down to <em>the studs.</em></h4>
+          <p>Old tub out. New plumbing, fresh framing, waterproof membrane, and a clean shower base in.</p>
+        </div>
+        <div class="phase-grid">
+          <figure>
+            <img src="images/bath-IMG_5638.jpg" loading="lazy" alt="Bathroom mid-remodel — exposed plumbing and subfloor" />
+            <figcaption>During · Demo &amp; Plumbing</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bath-IMG_5640.jpg" loading="lazy" alt="Bathroom mid-remodel — drywall and waterproof membrane prep" />
+            <figcaption>During · Drywall &amp; Waterproofing</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="g-item reveal">
-        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Hardwood floor install" />
-        <div class="g-label"><div class="sub">Wood Flooring</div><div class="main">White Oak Install</div></div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-tag phase-tag-after">After</span>
+          <h4>The <em>finish.</em></h4>
+          <p>Marble tile, soaking tub, gray quartz vanity. Light corner to corner.</p>
+        </div>
+        <div class="phase-grid cols-3">
+          <figure>
+            <img src="images/bath-IMG_5641.jpg" loading="lazy" alt="Finished master bath — freestanding tub and marble shower" />
+            <figcaption>After · Tub &amp; Shower</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bath-IMG_5642.jpg" loading="lazy" alt="Finished master bath — gray vanity, marble shower, freestanding tub" />
+            <figcaption>After · Full View</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bath-IMG_5643.jpg" loading="lazy" alt="Finished master bath — double-sink quartz vanity close-up" />
+            <figcaption>After · Double Vanity</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="g-item tall reveal">
-        <img src="https://images.unsplash.com/photo-1615529162924-f8605388461d?auto=format&fit=crop&w=800&q=80" alt="Epoxy garage floor" />
-        <div class="g-label"><div class="sub">Epoxy Flooring</div><div class="main">Metallic Garage Finish</div></div>
+    </div>
+
+    <!-- Project 2: Backyard Deck -->
+    <div class="project">
+      <div class="project-head reveal">
+        <div class="project-label">Project 02 — Deck Build</div>
+        <h3>From flagged grass to <em>finished deck.</em></h3>
+        <p>A new pressure‑treated deck built from scratch — staked out, dug, framed flat and square, then stained.</p>
       </div>
-      <div class="g-item reveal">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Interior remodel" />
-        <div class="g-label"><div class="sub">Trim &amp; Carpentry</div><div class="main">Crown &amp; Wainscot</div></div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-tag phase-tag-before">Before</span>
+          <h4>Empty <em>backyard.</em></h4>
+          <p>Marker flags out, footprint set, ready to break ground.</p>
+        </div>
+        <div class="phase-grid cols-1">
+          <figure>
+            <img src="images/proj2-IMG_5578.jpg" loading="lazy" alt="Backyard before deck build — grass with stake-out flags marking footings" />
+            <figcaption>Before · Stake‑Out</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-tag phase-tag-during">During</span>
+          <h4>Footings <em>and frame.</em></h4>
+          <p>Footings poured, ledger lagged to the house, joists set on 16‑inch centers.</p>
+        </div>
+        <div class="phase-grid">
+          <figure>
+            <img src="images/proj2-IMG_5580.jpg" loading="lazy" alt="Deck mid-build — pressure-treated joists framed against the house" />
+            <figcaption>During · Framing</figcaption>
+          </figure>
+          <figure>
+            <img src="images/proj2-IMG_5581.jpg" loading="lazy" alt="Deck mid-build — full joist layout from a wider angle" />
+            <figcaption>During · Joists Set</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-tag phase-tag-after">After</span>
+          <h4>Stained and <em>standing.</em></h4>
+          <p>Decking down, railing up, sealed against Chicago weather.</p>
+        </div>
+        <div class="phase-grid cols-1">
+          <figure>
+            <img src="images/proj2-IMG_5582.jpg" loading="lazy" alt="Finished backyard deck — stained pressure-treated wood with railing" />
+            <figcaption>After · Finished Deck</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </div>
@@ -1093,7 +1305,7 @@
         </div>
 
         <button type="submit">Send My Request →</button>
-        <div class="form-success" id="formSuccess">Thanks! I'll be in touch soon.</div>
+        <div class="form-success" id="formSuccess">Thanks! Your email app should open with the message ready to send.</div>
       </form>
     </div>
   </div>
@@ -1139,7 +1351,6 @@
         <li><a href="tel:8156005079">815-600-5079</a></li>
         <li><a href="mailto:tomdz@live.com">Email Tomas</a></li>
         <li>Naperville, IL</li>
-        <li>Mon – Sat · 7am – 7pm</li>
       </ul>
     </div>
   </div>
@@ -1170,12 +1381,27 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Form (demo — replace with real backend / mailto)
+  // Form: opens visitor's email app pre-filled to tomdz@live.com.
+  // Works on static hosting (GitHub Pages). To switch to a real form
+  // backend later, see Formspree (https://formspree.io) — replace this
+  // function body with: form.action = 'https://formspree.io/f/XXXX'; return true;
   function submitQuote(e) {
     e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const subject = encodeURIComponent('Quote request from ' + (v('name') || 'website'));
+    const body = encodeURIComponent(
+      'Name: ' + v('name') + '\n' +
+      'Phone: ' + v('phone') + '\n' +
+      'Email: ' + v('email') + '\n' +
+      'Service: ' + v('service') + '\n\n' +
+      'Project Details:\n' + v('details') + '\n'
+    );
+    window.location.href = 'mailto:tomdz@live.com?subject=' + subject + '&body=' + body;
     document.getElementById('formSuccess').classList.add('show');
-    document.getElementById('quoteForm').reset();
-    setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 6000);
+    setTimeout(() => {
+      document.getElementById('formSuccess').classList.remove('show');
+      document.getElementById('quoteForm').reset();
+    }, 6000);
     return false;
   }
 </script>
