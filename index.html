@@ -476,6 +476,48 @@
   }
   .form-success.show { display: block; }
 
+  /* ===== QR Card ===== */
+  .qr-card {
+    margin-top: 40px;
+    background: var(--cream);
+    border: 1px solid var(--line-soft);
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .qr-card .qr-img {
+    width: 130px; height: 130px; flex-shrink: 0;
+    background: #fff; padding: 10px;
+    border: 2px solid var(--ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .qr-card .qr-img canvas, .qr-card .qr-img img {
+    width: 100%; height: 100%; display: block;
+  }
+  .qr-card .qr-text { flex: 1; min-width: 0; }
+  .qr-card .qr-eyebrow {
+    font-family: 'Oswald', sans-serif; font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rust); margin-bottom: 8px; font-weight: 700;
+  }
+  .qr-card .qr-name {
+    font-family: 'Oswald', sans-serif; font-size: 22px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    margin-bottom: 4px; color: var(--ink);
+  }
+  .qr-card .qr-phone {
+    font-family: 'Oswald', sans-serif; font-size: 18px;
+    color: var(--ink-soft); margin-bottom: 10px; letter-spacing: 0.04em;
+  }
+  .qr-card .qr-tip {
+    font-size: 12px; color: var(--muted);
+    font-family: 'Fraunces', serif; font-style: italic;
+  }
+  @media (max-width: 500px) {
+    .qr-card { flex-direction: column; text-align: center; }
+  }
+
   /* ===== Footer ===== */
   footer {
     background: #0e0e0e; color: rgba(245,241,232,0.75);
@@ -583,7 +625,7 @@
 <div class="trust">
   <div class="trust-inner">
     <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Licensed &amp; Insured</div>
-    <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.11"/></svg>15+ Years Experience</div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.11"/></svg>25+ Years Experience</div>
     <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>Free Estimates</div>
     <div class="trust-item"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>Locally Owned</div>
   </div>
@@ -595,14 +637,14 @@
     <div class="reveal">
       <div class="eyebrow">About Tomas</div>
       <h2 class="section-title">One craftsman.<br/>One <em>promise.</em></h2>
-      <p class="section-lede">After fifteen years on jobsites across Chicagoland, Tomas Dzurnak built his handyman business on the simple idea that every homeowner deserves honest work, fair pricing, and a finish you're proud to show off.</p>
+      <p class="section-lede">After twenty-five years on jobsites across Chicagoland, Tomas Dzurnak built his handyman business on the simple idea that every homeowner deserves honest work, fair pricing, and a finish you're proud to show off.</p>
     </div>
 
     <div class="about-grid">
       <div class="about-img-wrap reveal">
-        <img src="https://images.unsplash.com/photo-1574359411659-15573a27bd78?auto=format&fit=crop&w=900&q=80" alt="Tomas on the job" />
+        <img src="images/tomas.jpg" alt="Tomas Dzurnak — handyman and home craftsman" />
         <div class="about-badge">
-          <div class="num">15+</div>
+          <div class="num">25+</div>
           <div class="label">Years on the Tools</div>
         </div>
       </div>
@@ -680,18 +722,18 @@
       </div>
 
       <div class="service reveal">
-        <div class="service-num">04 / Flooring</div>
+        <div class="service-num">04 / Surfaces</div>
         <div class="service-icon">
           <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
         </div>
-        <h3>Epoxy Flooring</h3>
-        <p>Glass‑smooth, tough, and easy to clean — for garages, basements, and workshops.</p>
+        <h3>Epoxy &amp; Concrete Surfaces</h3>
+        <p>Glass‑smooth, durable finishes for both floors and countertops — from utility spaces to showpieces.</p>
         <ul class="service-list">
-          <li>Concrete grinding &amp; prep</li>
-          <li>Metallic finishes</li>
-          <li>Flake &amp; chip systems</li>
-          <li>Solid color coats</li>
-          <li>Clear topcoat sealers</li>
+          <li>Garage &amp; basement floors</li>
+          <li>Kitchen &amp; bath countertops</li>
+          <li>Dining tables &amp; surfaces</li>
+          <li>Metallic, marble &amp; flake finishes</li>
+          <li>Concrete prep &amp; sealing</li>
         </ul>
       </div>
 
@@ -976,7 +1018,7 @@
           </div>
           <div>
             <div class="label">Email</div>
-            <div class="value"><a href="mailto:tomas@dzurnakhandyman.com">tomas@dzurnakhandyman.com</a></div>
+            <div class="value"><a href="mailto:tomdz@live.com">tomdz@live.com</a></div>
           </div>
         </div>
         <div class="info-block">
@@ -995,6 +1037,16 @@
           <div>
             <div class="label">Hours</div>
             <div class="value">Mon – Sat · 7am – 7pm</div>
+          </div>
+        </div>
+
+        <div class="qr-card">
+          <div class="qr-img" id="qrcode"></div>
+          <div class="qr-text">
+            <div class="qr-eyebrow">Save My Contact</div>
+            <div class="qr-name">Tomas Dzurnak</div>
+            <div class="qr-phone">815-600-5079</div>
+            <div class="qr-tip">Scan with your phone camera to add Tomas to your contacts.</div>
           </div>
         </div>
       </div>
@@ -1068,7 +1120,7 @@
         <li><a href="#services">Bathroom Remodels</a></li>
         <li><a href="#services">Basement Finishing</a></li>
         <li><a href="#services">Decks &amp; Patios</a></li>
-        <li><a href="#services">Epoxy Flooring</a></li>
+        <li><a href="#services">Epoxy &amp; Concrete Surfaces</a></li>
         <li><a href="#services">Wood Flooring</a></li>
       </ul>
     </div>
@@ -1085,7 +1137,7 @@
       <h5>Contact</h5>
       <ul>
         <li><a href="tel:8156005079">815-600-5079</a></li>
-        <li><a href="mailto:tomas@dzurnakhandyman.com">Email Tomas</a></li>
+        <li><a href="mailto:tomdz@live.com">Email Tomas</a></li>
         <li>Naperville, IL</li>
         <li>Mon – Sat · 7am – 7pm</li>
       </ul>
@@ -1126,6 +1178,36 @@
     setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 6000);
     return false;
   }
+</script>
+
+<!-- QR code library + generator -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+  // Generate a vCard QR code so phones can save the contact directly
+  (function() {
+    var vCard = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'FN:Tomas Dzurnak',
+      'N:Dzurnak;Tomas;;;',
+      'ORG:Tomas Dzurnak Handyman',
+      'TEL;TYPE=CELL:+18156005079',
+      'EMAIL:tomdz@live.com',
+      'END:VCARD'
+    ].join('\n');
+
+    var el = document.getElementById('qrcode');
+    if (el && window.QRCode) {
+      new QRCode(el, {
+        text: vCard,
+        width: 110,
+        height: 110,
+        colorDark: '#141414',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+  })();
 </script>
 
 </body>
