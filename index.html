@@ -667,6 +667,52 @@
   /* Reveal animation */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ===== Lightbox ===== */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(15,15,15,0.94);
+    display: none; align-items: center; justify-content: center;
+    padding: 32px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox .lb-img {
+    max-width: 92vw; max-height: 88vh;
+    object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    user-select: none;
+  }
+  .lightbox button {
+    background: rgba(20,20,20,0.6); color: var(--cream);
+    border: 1px solid rgba(245,241,232,0.25); cursor: pointer;
+    font-family: 'Oswald', sans-serif; line-height: 1;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .lightbox button:hover { background: var(--amber); color: var(--ink); border-color: var(--amber); }
+  .lightbox .lb-close {
+    position: absolute; top: 24px; right: 28px;
+    width: 48px; height: 48px; font-size: 28px; border-radius: 50%;
+  }
+  .lightbox .lb-prev, .lightbox .lb-next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 56px; height: 56px; font-size: 36px; border-radius: 50%;
+  }
+  .lightbox .lb-prev { left: 24px; }
+  .lightbox .lb-next { right: 24px; }
+  .lightbox .lb-counter {
+    position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+    color: var(--cream); font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.18em; text-transform: uppercase; font-size: 12px;
+    background: rgba(20,20,20,0.6); padding: 8px 16px;
+    border: 1px solid rgba(245,241,232,0.18);
+  }
+  @media (max-width: 600px) {
+    .lightbox { padding: 12px; }
+    .lightbox .lb-close { top: 14px; right: 14px; width: 40px; height: 40px; font-size: 24px; }
+    .lightbox .lb-prev, .lightbox .lb-next { width: 44px; height: 44px; font-size: 26px; }
+    .lightbox .lb-prev { left: 8px; }
+    .lightbox .lb-next { right: 8px; }
+  }
+  body.lb-locked { overflow: hidden; }
 </style>
 </head>
 <body>
@@ -967,138 +1013,91 @@
   </div>
 </section>
 
-<!-- FEATURED PROJECTS (before / during / after) -->
+<!-- FEATURED PROJECTS - GALLERY -->
 <section class="transformation" id="work">
   <div class="container">
     <div class="transform-head reveal">
       <div class="eyebrow">Featured Projects</div>
-      <h2 class="section-title">Before. During.<br/><em>After.</em></h2>
-      <p class="section-lede">Two recent jobs, start to finish.</p>
+      <h2 class="section-title">A few of <em>completed projects.</em></h2>
+      <p class="section-lede">Click any image to view full size.</p>
     </div>
 
-    <!-- Project 1: Master Bath -->
-    <div class="project">
-      <div class="project-head reveal">
-        <div class="project-label">Project 01 — Bathroom Remodel</div>
-        <h3>A master bath, <em>top to toe.</em></h3>
-        <p>Old tub, dark vanity, and a frosted shower stall stripped out. Marble‑look tile, a freestanding soaker, and a soft‑close gray vanity in their place.</p>
-      </div>
-
-      <div class="phase reveal">
-        <div class="phase-head">
-          <span class="phase-tag phase-tag-before">Before</span>
-          <h4>Where we <em>started.</em></h4>
-          <p>Dated finishes, frosted shower stall, heavy dark vanity that swallowed the light.</p>
-        </div>
-        <div class="phase-grid">
-          <figure>
-            <img src="images/bath-IMG_5634.jpg" loading="lazy" alt="Bathroom before remodel — old frosted shower stall and tub area" />
-            <figcaption>Before · Shower &amp; Tub</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bath-IMG_5635.jpg" loading="lazy" alt="Bathroom before remodel — original dark wood double vanity" />
-            <figcaption>Before · Vanity</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <div class="phase-head">
-          <span class="phase-tag phase-tag-during">During</span>
-          <h4>Down to <em>the studs.</em></h4>
-          <p>Old tub out. New plumbing, fresh framing, waterproof membrane, and a clean shower base in.</p>
-        </div>
-        <div class="phase-grid">
-          <figure>
-            <img src="images/bath-IMG_5638.jpg" loading="lazy" alt="Bathroom mid-remodel — exposed plumbing and subfloor" />
-            <figcaption>During · Demo &amp; Plumbing</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bath-IMG_5640.jpg" loading="lazy" alt="Bathroom mid-remodel — drywall and waterproof membrane prep" />
-            <figcaption>During · Drywall &amp; Waterproofing</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <div class="phase-head">
-          <span class="phase-tag phase-tag-after">After</span>
-          <h4>The <em>finish.</em></h4>
-          <p>Marble tile, soaking tub, gray quartz vanity. Light corner to corner.</p>
-        </div>
-        <div class="phase-grid cols-3">
-          <figure>
-            <img src="images/bath-IMG_5641.jpg" loading="lazy" alt="Finished master bath — freestanding tub and marble shower" />
-            <figcaption>After · Tub &amp; Shower</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bath-IMG_5642.jpg" loading="lazy" alt="Finished master bath — gray vanity, marble shower, freestanding tub" />
-            <figcaption>After · Full View</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bath-IMG_5643.jpg" loading="lazy" alt="Finished master bath — double-sink quartz vanity close-up" />
-            <figcaption>After · Double Vanity</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2: Backyard Deck -->
-    <div class="project">
-      <div class="project-head reveal">
-        <div class="project-label">Project 02 — Deck Build</div>
-        <h3>From flagged grass to <em>finished deck.</em></h3>
-        <p>A new pressure‑treated deck built from scratch — staked out, dug, framed flat and square, then stained.</p>
-      </div>
-
-      <div class="phase reveal">
-        <div class="phase-head">
-          <span class="phase-tag phase-tag-before">Before</span>
-          <h4>Empty <em>backyard.</em></h4>
-          <p>Marker flags out, footprint set, ready to break ground.</p>
-        </div>
-        <div class="phase-grid cols-1">
-          <figure>
-            <img src="images/proj2-IMG_5578.jpg" loading="lazy" alt="Backyard before deck build — grass with stake-out flags marking footings" />
-            <figcaption>Before · Stake‑Out</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <div class="phase-head">
-          <span class="phase-tag phase-tag-during">During</span>
-          <h4>Footings <em>and frame.</em></h4>
-          <p>Footings poured, ledger lagged to the house, joists set on 16‑inch centers.</p>
-        </div>
-        <div class="phase-grid">
-          <figure>
-            <img src="images/proj2-IMG_5580.jpg" loading="lazy" alt="Deck mid-build — pressure-treated joists framed against the house" />
-            <figcaption>During · Framing</figcaption>
-          </figure>
-          <figure>
-            <img src="images/proj2-IMG_5581.jpg" loading="lazy" alt="Deck mid-build — full joist layout from a wider angle" />
-            <figcaption>During · Joists Set</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="phase reveal">
-        <div class="phase-head">
-          <span class="phase-tag phase-tag-after">After</span>
-          <h4>Stained and <em>standing.</em></h4>
-          <p>Decking down, railing up, sealed against Chicago weather.</p>
-        </div>
-        <div class="phase-grid cols-1">
-          <figure>
-            <img src="images/proj2-IMG_5582.jpg" loading="lazy" alt="Finished backyard deck — stained pressure-treated wood with railing" />
-            <figcaption>After · Finished Deck</figcaption>
-          </figure>
-        </div>
-      </div>
+    <div class="gallery-grid" id="projectGallery">
+      <div class="g-item" data-index="0"><img src="images/gallery/thumbs/gallery-01.jpg" data-full="images/gallery/gallery-01.jpg" loading="lazy" alt="Completed project 1"/></div>
+      <div class="g-item" data-index="1"><img src="images/gallery/thumbs/gallery-02.jpg" data-full="images/gallery/gallery-02.jpg" loading="lazy" alt="Completed project 2"/></div>
+      <div class="g-item" data-index="2"><img src="images/gallery/thumbs/gallery-03.jpg" data-full="images/gallery/gallery-03.jpg" loading="lazy" alt="Completed project 3"/></div>
+      <div class="g-item" data-index="3"><img src="images/gallery/thumbs/gallery-04.jpg" data-full="images/gallery/gallery-04.jpg" loading="lazy" alt="Completed project 4"/></div>
+      <div class="g-item" data-index="4"><img src="images/gallery/thumbs/gallery-05.jpg" data-full="images/gallery/gallery-05.jpg" loading="lazy" alt="Completed project 5"/></div>
+      <div class="g-item" data-index="5"><img src="images/gallery/thumbs/gallery-06.jpg" data-full="images/gallery/gallery-06.jpg" loading="lazy" alt="Completed project 6"/></div>
+      <div class="g-item" data-index="6"><img src="images/gallery/thumbs/gallery-07.jpg" data-full="images/gallery/gallery-07.jpg" loading="lazy" alt="Completed project 7"/></div>
+      <div class="g-item" data-index="7"><img src="images/gallery/thumbs/gallery-08.jpg" data-full="images/gallery/gallery-08.jpg" loading="lazy" alt="Completed project 8"/></div>
+      <div class="g-item" data-index="8"><img src="images/gallery/thumbs/gallery-09.jpg" data-full="images/gallery/gallery-09.jpg" loading="lazy" alt="Completed project 9"/></div>
+      <div class="g-item" data-index="9"><img src="images/gallery/thumbs/gallery-10.jpg" data-full="images/gallery/gallery-10.jpg" loading="lazy" alt="Completed project 10"/></div>
+      <div class="g-item" data-index="10"><img src="images/gallery/thumbs/gallery-11.jpg" data-full="images/gallery/gallery-11.jpg" loading="lazy" alt="Completed project 11"/></div>
+      <div class="g-item" data-index="11"><img src="images/gallery/thumbs/gallery-12.jpg" data-full="images/gallery/gallery-12.jpg" loading="lazy" alt="Completed project 12"/></div>
+      <div class="g-item" data-index="12"><img src="images/gallery/thumbs/gallery-13.jpg" data-full="images/gallery/gallery-13.jpg" loading="lazy" alt="Completed project 13"/></div>
+      <div class="g-item" data-index="13"><img src="images/gallery/thumbs/gallery-14.jpg" data-full="images/gallery/gallery-14.jpg" loading="lazy" alt="Completed project 14"/></div>
+      <div class="g-item" data-index="14"><img src="images/gallery/thumbs/gallery-15.jpg" data-full="images/gallery/gallery-15.jpg" loading="lazy" alt="Completed project 15"/></div>
+      <div class="g-item" data-index="15"><img src="images/gallery/thumbs/gallery-16.jpg" data-full="images/gallery/gallery-16.jpg" loading="lazy" alt="Completed project 16"/></div>
+      <div class="g-item" data-index="16"><img src="images/gallery/thumbs/gallery-17.jpg" data-full="images/gallery/gallery-17.jpg" loading="lazy" alt="Completed project 17"/></div>
+      <div class="g-item" data-index="17"><img src="images/gallery/thumbs/gallery-18.jpg" data-full="images/gallery/gallery-18.jpg" loading="lazy" alt="Completed project 18"/></div>
+      <div class="g-item" data-index="18"><img src="images/gallery/thumbs/gallery-19.jpg" data-full="images/gallery/gallery-19.jpg" loading="lazy" alt="Completed project 19"/></div>
+      <div class="g-item" data-index="19"><img src="images/gallery/thumbs/gallery-20.jpg" data-full="images/gallery/gallery-20.jpg" loading="lazy" alt="Completed project 20"/></div>
+      <div class="g-item" data-index="20"><img src="images/gallery/thumbs/gallery-21.jpg" data-full="images/gallery/gallery-21.jpg" loading="lazy" alt="Completed project 21"/></div>
+      <div class="g-item" data-index="21"><img src="images/gallery/thumbs/gallery-22.jpg" data-full="images/gallery/gallery-22.jpg" loading="lazy" alt="Completed project 22"/></div>
+      <div class="g-item" data-index="22"><img src="images/gallery/thumbs/gallery-23.jpg" data-full="images/gallery/gallery-23.jpg" loading="lazy" alt="Completed project 23"/></div>
+      <div class="g-item" data-index="23"><img src="images/gallery/thumbs/gallery-24.jpg" data-full="images/gallery/gallery-24.jpg" loading="lazy" alt="Completed project 24"/></div>
+      <div class="g-item" data-index="24"><img src="images/gallery/thumbs/gallery-25.jpg" data-full="images/gallery/gallery-25.jpg" loading="lazy" alt="Completed project 25"/></div>
+      <div class="g-item" data-index="25"><img src="images/gallery/thumbs/gallery-26.jpg" data-full="images/gallery/gallery-26.jpg" loading="lazy" alt="Completed project 26"/></div>
+      <div class="g-item" data-index="26"><img src="images/gallery/thumbs/gallery-27.jpg" data-full="images/gallery/gallery-27.jpg" loading="lazy" alt="Completed project 27"/></div>
+      <div class="g-item" data-index="27"><img src="images/gallery/thumbs/gallery-28.jpg" data-full="images/gallery/gallery-28.jpg" loading="lazy" alt="Completed project 28"/></div>
+      <div class="g-item" data-index="28"><img src="images/gallery/thumbs/gallery-29.jpg" data-full="images/gallery/gallery-29.jpg" loading="lazy" alt="Completed project 29"/></div>
+      <div class="g-item" data-index="29"><img src="images/gallery/thumbs/gallery-30.jpg" data-full="images/gallery/gallery-30.jpg" loading="lazy" alt="Completed project 30"/></div>
+      <div class="g-item" data-index="30"><img src="images/gallery/thumbs/gallery-31.jpg" data-full="images/gallery/gallery-31.jpg" loading="lazy" alt="Completed project 31"/></div>
+      <div class="g-item" data-index="31"><img src="images/gallery/thumbs/gallery-32.jpg" data-full="images/gallery/gallery-32.jpg" loading="lazy" alt="Completed project 32"/></div>
+      <div class="g-item" data-index="32"><img src="images/gallery/thumbs/gallery-33.jpg" data-full="images/gallery/gallery-33.jpg" loading="lazy" alt="Completed project 33"/></div>
+      <div class="g-item" data-index="33"><img src="images/gallery/thumbs/gallery-34.jpg" data-full="images/gallery/gallery-34.jpg" loading="lazy" alt="Completed project 34"/></div>
+      <div class="g-item" data-index="34"><img src="images/gallery/thumbs/gallery-35.jpg" data-full="images/gallery/gallery-35.jpg" loading="lazy" alt="Completed project 35"/></div>
+      <div class="g-item" data-index="35"><img src="images/gallery/thumbs/gallery-36.jpg" data-full="images/gallery/gallery-36.jpg" loading="lazy" alt="Completed project 36"/></div>
+      <div class="g-item" data-index="36"><img src="images/gallery/thumbs/gallery-37.jpg" data-full="images/gallery/gallery-37.jpg" loading="lazy" alt="Completed project 37"/></div>
+      <div class="g-item" data-index="37"><img src="images/gallery/thumbs/gallery-38.jpg" data-full="images/gallery/gallery-38.jpg" loading="lazy" alt="Completed project 38"/></div>
+      <div class="g-item" data-index="38"><img src="images/gallery/thumbs/gallery-39.jpg" data-full="images/gallery/gallery-39.jpg" loading="lazy" alt="Completed project 39"/></div>
+      <div class="g-item" data-index="39"><img src="images/gallery/thumbs/gallery-40.jpg" data-full="images/gallery/gallery-40.jpg" loading="lazy" alt="Completed project 40"/></div>
+      <div class="g-item" data-index="40"><img src="images/gallery/thumbs/gallery-41.jpg" data-full="images/gallery/gallery-41.jpg" loading="lazy" alt="Completed project 41"/></div>
+      <div class="g-item" data-index="41"><img src="images/gallery/thumbs/gallery-42.jpg" data-full="images/gallery/gallery-42.jpg" loading="lazy" alt="Completed project 42"/></div>
+      <div class="g-item" data-index="42"><img src="images/gallery/thumbs/gallery-43.jpg" data-full="images/gallery/gallery-43.jpg" loading="lazy" alt="Completed project 43"/></div>
+      <div class="g-item" data-index="43"><img src="images/gallery/thumbs/gallery-44.jpg" data-full="images/gallery/gallery-44.jpg" loading="lazy" alt="Completed project 44"/></div>
+      <div class="g-item" data-index="44"><img src="images/gallery/thumbs/gallery-45.jpg" data-full="images/gallery/gallery-45.jpg" loading="lazy" alt="Completed project 45"/></div>
+      <div class="g-item" data-index="45"><img src="images/gallery/thumbs/gallery-46.jpg" data-full="images/gallery/gallery-46.jpg" loading="lazy" alt="Completed project 46"/></div>
+      <div class="g-item" data-index="46"><img src="images/gallery/thumbs/gallery-47.jpg" data-full="images/gallery/gallery-47.jpg" loading="lazy" alt="Completed project 47"/></div>
+      <div class="g-item" data-index="47"><img src="images/gallery/thumbs/gallery-48.jpg" data-full="images/gallery/gallery-48.jpg" loading="lazy" alt="Completed project 48"/></div>
+      <div class="g-item" data-index="48"><img src="images/gallery/thumbs/gallery-49.jpg" data-full="images/gallery/gallery-49.jpg" loading="lazy" alt="Completed project 49"/></div>
+      <div class="g-item" data-index="49"><img src="images/gallery/thumbs/gallery-50.jpg" data-full="images/gallery/gallery-50.jpg" loading="lazy" alt="Completed project 50"/></div>
+      <div class="g-item" data-index="50"><img src="images/gallery/thumbs/gallery-51.jpg" data-full="images/gallery/gallery-51.jpg" loading="lazy" alt="Completed project 51"/></div>
+      <div class="g-item" data-index="51"><img src="images/gallery/thumbs/gallery-52.jpg" data-full="images/gallery/gallery-52.jpg" loading="lazy" alt="Completed project 52"/></div>
+      <div class="g-item" data-index="52"><img src="images/gallery/thumbs/gallery-53.jpg" data-full="images/gallery/gallery-53.jpg" loading="lazy" alt="Completed project 53"/></div>
+      <div class="g-item" data-index="53"><img src="images/gallery/thumbs/gallery-54.jpg" data-full="images/gallery/gallery-54.jpg" loading="lazy" alt="Completed project 54"/></div>
+      <div class="g-item" data-index="54"><img src="images/gallery/thumbs/gallery-55.jpg" data-full="images/gallery/gallery-55.jpg" loading="lazy" alt="Completed project 55"/></div>
+      <div class="g-item" data-index="55"><img src="images/gallery/thumbs/gallery-56.jpg" data-full="images/gallery/gallery-56.jpg" loading="lazy" alt="Completed project 56"/></div>
+      <div class="g-item" data-index="56"><img src="images/gallery/thumbs/gallery-57.jpg" data-full="images/gallery/gallery-57.jpg" loading="lazy" alt="Completed project 57"/></div>
+      <div class="g-item" data-index="57"><img src="images/gallery/thumbs/gallery-58.jpg" data-full="images/gallery/gallery-58.jpg" loading="lazy" alt="Completed project 58"/></div>
+      <div class="g-item" data-index="58"><img src="images/gallery/thumbs/gallery-59.jpg" data-full="images/gallery/gallery-59.jpg" loading="lazy" alt="Completed project 59"/></div>
+      <div class="g-item" data-index="59"><img src="images/gallery/thumbs/gallery-60.jpg" data-full="images/gallery/gallery-60.jpg" loading="lazy" alt="Completed project 60"/></div>
+      <div class="g-item" data-index="60"><img src="images/gallery/thumbs/gallery-61.jpg" data-full="images/gallery/gallery-61.jpg" loading="lazy" alt="Completed project 61"/></div>
+      <div class="g-item" data-index="61"><img src="images/gallery/thumbs/gallery-62.jpg" data-full="images/gallery/gallery-62.jpg" loading="lazy" alt="Completed project 62"/></div>
+      <div class="g-item" data-index="62"><img src="images/gallery/thumbs/gallery-63.jpg" data-full="images/gallery/gallery-63.jpg" loading="lazy" alt="Completed project 63"/></div>
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Project image viewer">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous image">&#8249;</button>
+  <button class="lb-next" aria-label="Next image">&#8250;</button>
+  <img class="lb-img" alt=""/>
+  <div class="lb-counter"></div>
+</div>
 
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
@@ -1381,6 +1380,63 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Project gallery lightbox
+  (function() {
+    const gallery = document.getElementById('projectGallery');
+    const lb = document.getElementById('lightbox');
+    if (!gallery || !lb) return;
+    const lbImg = lb.querySelector('.lb-img');
+    const lbCounter = lb.querySelector('.lb-counter');
+    const items = Array.from(gallery.querySelectorAll('.g-item img'));
+    let currentIndex = 0;
+
+    function show(i) {
+      if (i < 0) i = items.length - 1;
+      if (i >= items.length) i = 0;
+      currentIndex = i;
+      const full = items[i].getAttribute('data-full');
+      lbImg.src = full;
+      lbImg.alt = items[i].alt || '';
+      lbCounter.textContent = (i + 1) + ' / ' + items.length;
+    }
+    function open(i) {
+      show(i);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lb-locked');
+    }
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lb-locked');
+      lbImg.src = '';
+    }
+
+    items.forEach((img, i) => {
+      img.parentElement.addEventListener('click', () => open(i));
+    });
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', () => show(currentIndex - 1));
+    lb.querySelector('.lb-next').addEventListener('click', () => show(currentIndex + 1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(currentIndex - 1);
+      else if (e.key === 'ArrowRight') show(currentIndex + 1);
+    });
+
+    // Touch swipe support
+    let touchX = null;
+    lb.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) show(currentIndex + (dx < 0 ? 1 : -1));
+      touchX = null;
+    }, { passive: true });
+  })();
 
   // Form: opens visitor's email app pre-filled to tomdz@live.com.
   // Works on static hosting (GitHub Pages). To switch to a real form
